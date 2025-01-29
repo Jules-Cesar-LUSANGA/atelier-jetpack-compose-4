@@ -4,40 +4,50 @@
     <string name="country1">Democratic Republic of Congo</string>
     <string name="capital1">Kinshasa</string>
     <string name="code1">+243</string>
+    <string name="description1">A large Central African country known for its vast natural resources and the Congo River.</string>
 
     <string name="country2">France</string>
     <string name="capital2">Paris</string>
     <string name="code2">+33</string>
+    <string name="description2">A European nation famous for its rich history, culture, and landmarks like the Eiffel Tower.</string>
 
     <string name="country3">United States of America</string>
     <string name="capital3">Washington, D.C.</string>
     <string name="code3">+1</string>
+    <string name="description3">A North American country known for its economic power, diverse culture, and technological advancements.</string>
 
     <string name="country4">Kenya</string>
     <string name="capital4">Nairobi</string>
     <string name="code4">+254</string>
+    <string name="description4">An East African country famous for its wildlife, safaris, and the Great Rift Valley.</string>
 
     <string name="country5">Egypt</string>
     <string name="capital5">Cairo</string>
     <string name="code5">+20</string>
+    <string name="description5">A North African country known for its ancient pyramids, the Nile River, and rich history.</string>
 
     <string name="country6">Canada</string>
     <string name="capital6">Ottawa</string>
     <string name="code6">+1</string>
+    <string name="description6">A vast North American country known for its natural beauty, multicultural cities, and cold winters.</string>
 
     <string name="country7">India</string>
     <string name="capital7">New Delhi</string>
     <string name="code7">+91</string>
+    <string name="description7">A South Asian nation with a rich cultural heritage, diverse landscapes, and a booming economy.</string>
 
     <string name="country8">China</string>
     <string name="capital8">Beijing</string>
     <string name="code8">+86</string>
+    <string name="description8">A global economic giant known for its history, Great Wall, and technological innovations.</string>
 
     <string name="country9">Brazil</string>
     <string name="capital9">Brasília</string>
     <string name="code9">+55</string>
+    <string name="description9">The largest country in South America, famous for its Amazon rainforest, football, and Carnival.</string>
 
     <string name="country10">Gabon</string>
     <string name="capital10">Libreville</string>
     <string name="code10">+241</string>
+    <string name="description10">A Central African country known for its biodiversity, oil reserves, and rainforests.</string>
 </resources>
