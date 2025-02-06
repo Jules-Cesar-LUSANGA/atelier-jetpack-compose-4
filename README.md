@@ -1,5 +1,8 @@
 # Countries List app
 
-Affichage d'une liste de pays avec leur capital et code
+Affichage d'une liste de pays avec leur capitale et code
 
-![Alt text](screenshot.jpg)
+<p align="center">
+  <img src="home_screenshot.png" alt="Home Screenshot" width="45%">
+  <img src="screenshot.jpg" alt="Screenshot" width="45%">
+</p>

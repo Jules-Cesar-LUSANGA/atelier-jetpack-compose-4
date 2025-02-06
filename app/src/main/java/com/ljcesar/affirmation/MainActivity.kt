@@ -46,6 +46,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ljcesar.affirmation.data.DataSource
 import com.ljcesar.affirmation.model.Country
+import com.ljcesar.affirmation.ui.navigation.NavigationGraph
 import kotlin.math.exp
 
 class MainActivity : ComponentActivity() {
@@ -53,125 +54,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            CountriesApp()
-        }
-    }
-}
-
-@Composable
-fun CountriesApp() {
-    val layoutDirection = LocalLayoutDirection.current
-    Surface(
-        modifier = Modifier
-            .fillMaxSize()
-            .statusBarsPadding()
-            .padding(
-                start = WindowInsets.safeDrawing
-                    .asPaddingValues()
-                    .calculateStartPadding(layoutDirection),
-                end = WindowInsets.safeDrawing
-                    .asPaddingValues()
-                    .calculateEndPadding(layoutDirection),
-            ),
-    ) {
-        Column {
-            AppBar()
-            CountriesList(
-                countriesList = DataSource().loadCountries()
-            )
-        }
-    }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun AppBar(){
-    CenterAlignedTopAppBar(
-        title = {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Image(
-                    painter = painterResource(R.drawable.mboka_logo),
-                    contentDescription = "M'bokas"
-                )
-                Text("M'bokas", style = MaterialTheme.typography.displayMedium)
-            }
-        }
-    )
-}
-
-@Composable
-fun CountriesList(countriesList: List<Country>, modifier: Modifier = Modifier) {
-    LazyColumn(modifier = modifier) {
-        items(countriesList) { affirmation : Country ->
-            CountryCard(
-                country = affirmation,
-                modifier = Modifier.padding(8.dp)
-            )
-        }
-    }
-}
-
-@Preview
-@Composable
-private fun CountryCardPreview() {
-    CountryCard(Country(R.string.country1,R.string.capital1, R.string.code1, R.string.description1, R.drawable.image1))
-}
-
-@Composable
-fun CountryCard(country: Country, modifier: Modifier = Modifier) {
-    var expanded by remember { mutableStateOf(false) }
-    Column {
-        Row(
-            modifier = Modifier.padding(15.dp)
-        ) {
-            Image(
-                painter = painterResource(country.imageResourceId),
-                contentDescription = stringResource(country.stringNameResourceId),
-                modifier = Modifier
-                    .size(80.dp)
-                    .clip(RoundedCornerShape(50.dp)),
-                contentScale = ContentScale.Crop,
-            )
-            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                Box(modifier = Modifier.weight(1f)) {
-                    Column(
-                        modifier = Modifier.padding(5.dp)
-                    ) {
-                        Text(
-                            text = LocalContext.current.getString(country.stringNameResourceId),
-                            style = MaterialTheme.typography.titleLarge
-                        )
-                        Text(
-                            text = "${LocalContext.current.getString(country.stringCapitalResourceId)} / ${
-                                LocalContext.current.getString(
-                                    country.stringCodeResourceId
-                                )
-                            }",
-                            style = MaterialTheme.typography.titleMedium
-                        )
-                    }
-                }
-                Image(
-                    modifier = Modifier
-                        .size(20.dp)
-                        .clickable { expanded = !expanded },
-                    painter = painterResource(if(expanded) R.drawable.arrow_top else R.drawable.arrow_bottom),
-                    contentDescription = if(expanded) "Voir moins" else "Voir plus")
-
-            }
-
-        }
-
-        if(expanded){
-            Box(
-                modifier = Modifier.padding(horizontal = 15.dp)
-            ) {
-                Text(stringResource(
-                    country.stringDescriptionResourceId),
-                    style = MaterialTheme.typography.titleMedium)
-            }
+            NavigationGraph()
         }
     }
 }
